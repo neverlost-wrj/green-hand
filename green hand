@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<string.h>
+
+typedef struct student //1.定义结构体
+{
+	char name[100];
+	int age;
+}S;
+
+void method(S* p);
+
+int main()
+{
+	S stu;//2.定义结构体变量的名称
+
+	strcpy(stu.name, "neverlost");//3.给字符串赋值要用strcpy,数据名要用.号引出
+	stu.age = 18;
+
+	printf("学生的初始数据为：%s,%d岁\n", stu.name, stu.age);
+
+    method(&stu);
+	printf("修改后学生的数据为：%s,%d岁\n", stu.name, stu.age);
+	return 0;
+}
+void  method(S* p)//指针p里面记录的是main函数中stu的内存地址
+{
+	printf("接收到main函数中学生的初始数据为：%s,%d\n", (*p).name, (*p).age);
+
+	//修改
+	printf("输入要修改的学生姓名\n");
+	scanf("%s", (*p).name);
+	printf("输入要修改的学生年龄\n");
+	scanf("%d", &((*p).age));
+
+	printf("在method函数中修改过之后，学生的信息为：%s,%d\n", (*p).name, (*p).age);
+
+}
