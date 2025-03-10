@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	double drt,a,b,c,d,x1,x2;
+	printf("输入a,b,c的值：\n");
+	scanf("%lf %lf %lf", &a, &b, &c);
+
+	drt = b * b - 4 * a * c;//计算drt
+
+	d= sqrt(drt);//根号下drt
+
+	
+	x1 = (-b + d) / 2 * a;
+	x2 = (-b - d) / 2 * a;
+
+	printf("%.1lf\n", x1);
+	printf("%.1lf", x2);
+	return 0;
+}
