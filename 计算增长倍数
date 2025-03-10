@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	printf("输入年增长率：\n");
+	double r;
+	scanf("%lf", &r);
+
+	printf("输入年数:\n");
+	int n;
+	scanf("%d", &n);//键盘录入增长率和年数
+
+	double p = pow(1 + r, n);//套公式计算增长倍数
+	
+	
+	printf("%d年后的增长倍数为：%lf",n, p);
+	return 0;
+}
