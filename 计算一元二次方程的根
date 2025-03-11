@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	double a, b, c, drt,x1,x2;
+	printf("依次输入a b c的值：\n");
+	scanf("%lf %lf %lf", &a, &b, &c);
+
+	drt = b * b - 4 * a * c;//计算drt
+	if (drt >= 0)
+	{
+		x1 = (-b + drt) / 2 * a;
+		x2 = (-b - drt) / 2 * a;
+		printf("函数有两个根，分别为%.2lf和%.2lf\n",x1,x2);
+	}
+	else
+	{
+		printf("该方程无实根");
+	}
+	return 0;
+}
