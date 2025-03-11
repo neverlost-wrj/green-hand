@@ -1,0 +1,34 @@
+#include <stdio.h>
+int main()
+{
+	double s,prize,weight,money;//假设每吨每千米货物的基本运费为prize,货物的重量为weight,用户总共需要支付的钱为money
+	printf("输入路程,基本运费和货物重量：\n");
+	scanf("%lf %lf %lf", &s, &prize,&weight);
+
+	if (0<s&&s < 250)
+	{
+		money = prize * weight * s;
+		printf("需支付%.2lf元", money);
+	}
+	else if (250 <= s &&s< 500)
+	{
+		money = prize * weight * s * (1 - 0.02);
+		printf("需支付%.2lf元", money);
+	}
+	else if (500 <= s&&s < 1000)
+	{
+		money = prize * weight * s * (1 - 0.05);
+		printf("需支付%.2lf元", money);
+	}
+	else if (1000 <= s && s < 2000)
+	{
+		money = prize * weight * s * (1 - 0.08);
+		printf("需支付%.2lf元", money);
+	}
+	else
+	{
+		money = prize * weight * s * (1 - 0.1);
+		printf("需支付%.2lf元", money);
+	}
+	return 0;
+}
