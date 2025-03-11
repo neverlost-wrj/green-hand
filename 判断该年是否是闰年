@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main()
+{
+	int leap;
+	printf("输入年份：\n");
+	scanf("%d", &leap);
+	
+	if (leap % 4 == 0 && leap % 100 != 0)
+	{
+		printf("%d年是闰年", leap);
+	}
+	else if (leap % 400 == 0)
+	{
+		printf("%d年是闰年", leap);
+	}
+	else
+	{
+		printf("%d年不是闰年", leap);
+	}
+
+	return 0;
+}
