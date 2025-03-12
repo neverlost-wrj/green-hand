@@ -1,0 +1,20 @@
+#include <stdio.h>
+fac(int a)
+{
+	if (a == 0 || a == 1)
+	{
+		return 1;
+	}
+	else
+	{
+		return a * fac(a - 1);
+	}
+}
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	int jie = fac(n);
+	printf("%d!=%d", n, jie);
+	return 0;
+}
