@@ -1,0 +1,32 @@
+//冒泡排序：从小到大
+//相邻元素两两比较，小的放前面，大的放后面
+#include<stdio.h>
+int main()
+{
+	//初始化数组并计算长度
+	int num[] = { 25,69,14,35,48,1,79 };
+	int len = sizeof(num) / sizeof(int);
+
+	//i代表次数,j代表索引
+	//外循环：内循环执行len-1次
+	for (int i = 1; i <= len-1; i++)
+	{
+		//内循环：第一次内循环结束后最大值在数组最右端
+		for (int j = 0; j < len-1-i; j++)//前面-1是为了防止索引越界，后面的-i为了提高效率（前面排过后放在最后的不用再比了）
+		{
+			if (num[j] > num[j + 1])//注意这里j无法取到最大索引（j+1限制了它）
+			{
+				int temp = num[j];
+				num[j] = num[j + 1];
+				num[j + 1] = temp;
+			}
+		}
+	}
+	
+	//遍历数组
+	for (int i = 0; i < len; i++)
+	{
+		printf("%d ", num[i]);
+	}
+	return 0;
+}
